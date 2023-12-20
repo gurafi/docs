@@ -27,11 +27,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: pnpm
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
@@ -40,6 +46,7 @@ jobs:
           #
           # You may remove this line if you want to manage the configuration yourself.
           static_site_generator: next
+
       - name: Restore cache
         uses: actions/cache@v3
         with:
@@ -50,12 +57,16 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+
       - name: Install dependencies
         run: pnpm install
+
       - name: Build with Next.js
         run: pnpm next build
+
       - name: Static HTML export with Next.js
         run: pnpm next export
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
