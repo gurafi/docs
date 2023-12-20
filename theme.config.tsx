@@ -1,18 +1,20 @@
-import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import React from "react";
+import { DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+  logo: <span>Gurafi</span>,
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: "https://github.com/gurafi/gurafi",
   },
-  chat: {
-    link: 'https://discord.com',
+  docsRepositoryBase: "https://github.com/gurafi/docs/tree/main",
+  banner: {
+    dismissible: false,
+    key: "prerelease-banner",
+    text: <>This crate is unreleased so there is no stability guarantees!</>,
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
   footer: {
-    text: 'Nextra Docs Template',
+    component: <></>,
   },
-}
+};
 
-export default config
+export default config;

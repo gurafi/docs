@@ -1,9 +1,10 @@
 # Documentation
 
-Documentation for Gurafi projects
+Documentation for Gurafi projects. This documentation is built using [Nextra](https://nextra.site).
 
 ## Usage
 
 ```bash
-# TODO
+pnpm i
+pnpm dev
 ```
