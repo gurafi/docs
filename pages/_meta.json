@@ -1,4 +1,6 @@
 {
   "index": "Introduction",
-  "another": "Another Page"
+  "schema": "Schema",
+  "server": "Server",
+  "docs": "docs.rs"
 }
